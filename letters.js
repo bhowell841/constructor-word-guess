@@ -3,6 +3,6 @@ function Letter(char){
     this.showLetter = false
 }
 var testLetter = new Letter("a")
-console.log(testLetter);
+// console.log("testLetter: ", testLetter);
 
 module.exports = Letter;
