@@ -6,6 +6,7 @@ var randomItem = words[Math.floor(Math.random() * words.length)];
 var testWord = new Word(randomItem);
 // console.log("testWord:", testWord);
 var count = 8;
+console.log("")
 console.log("Guesses Remaining: ", count);
 var letters = [];
 var win = false;
@@ -40,10 +41,9 @@ function askQue() {
         }
 
 
-        if(win === false && play === true){
+        if (win === false && play === true) {
             askQue();
-        }
-        else{
+        } else {
             console.log("----------------------------")
             console.log("-----Thanks for Playing-----")
             console.log("----------------------------")
@@ -64,17 +64,16 @@ function displayWord() {
 
     if (count < 8) {
         if (cleanStr.includes("_ ") && count > 0) {
-            console.log("cleanStr: Yes _  Play");
-        }
-        else if (cleanStr.includes("_ ") && count <= 0) {
-            console.log("cleanStr: Yes _  Lose");
+            // console.log("cleanStr: Yes _  Play");
+        } else if (cleanStr.includes("_ ") && count <= 0) {
+            // console.log("cleanStr: Yes _  Lose");
             loseGame();
         } else {
             winGame();
         }
     }
 
-    // console.log("Game Word: ", cleanStr);
+    console.log("Game Word: ", cleanStr);
     console.log("----------------------------------")
     console.log("")
     // return cleanStr;
@@ -84,15 +83,15 @@ function displayWord() {
 
 function winGame() {
     win = true;
-    console.log("You Win!")
+    console.log("You Win!  Press any key to end the game.")
+
 }
 
 
 
 function loseGame() {
     play = false;
-    console.log("LOSER!  Game over.")
+    console.log("LOSER!  Press any key to end the game.")
 }
 
 askQue();
-
