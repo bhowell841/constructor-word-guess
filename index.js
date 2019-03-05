@@ -21,7 +21,7 @@ var questions = [{
 function askQue() {
     displayWord();
     inquirer.prompt(questions).then(function (answer) {
-
+        
         count--;
 
         if (letters.includes(answer.letter)) {
@@ -62,6 +62,17 @@ function displayWord() {
         }
     }
 
+    getCount(count, cleanStr);
+
+    console.log("Game Word: ", cleanStr);
+    console.log("----------------------------------")
+    console.log("")
+    // return cleanStr;
+}
+
+
+
+function getCount(count, cleanStr){
     if (count < 8) {
         if (cleanStr.includes("_ ") && count > 0) {
             // console.log("cleanStr: Yes _  Play");
@@ -72,12 +83,7 @@ function displayWord() {
             winGame();
         }
     }
-
-    console.log("Game Word: ", cleanStr);
-    console.log("----------------------------------")
-    console.log("")
-    // return cleanStr;
-}
+};
 
 
 
