@@ -1,3 +1,5 @@
+
+// 
 function Letter(char){
     this.char = char
     this.showLetter = false

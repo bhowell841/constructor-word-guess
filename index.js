@@ -19,7 +19,7 @@ var questions = [{
 }];
 
 function askQue() {
-    displayWord();
+    // displayWord();
     inquirer.prompt(questions).then(function (answer) {
         
         count--;
@@ -42,7 +42,8 @@ function askQue() {
 
 
         if (win === false && play === true) {
-            askQue();
+            // askQue();
+            displayWord();
         } else {
             console.log("----------------------------")
             console.log("-----Thanks for Playing-----")
@@ -62,34 +63,41 @@ function displayWord() {
         }
     }
 
-    getCount(count, cleanStr);
+   
 
     console.log("Game Word: ", cleanStr);
     console.log("----------------------------------")
     console.log("")
+    getCount(count, cleanStr);
     // return cleanStr;
 }
 
 
 
 function getCount(count, cleanStr){
-    if (count < 8) {
+    // console.log("getCount: " + count);
+    // console.log("cleanStr: " + cleanStr);
+    // if (count < 8) {
         if (cleanStr.includes("_ ") && count > 0) {
             // console.log("cleanStr: Yes _  Play");
+            askQue();
         } else if (cleanStr.includes("_ ") && count <= 0) {
             // console.log("cleanStr: Yes _  Lose");
             loseGame();
         } else {
             winGame();
         }
-    }
+    // }
 };
 
 
 
 function winGame() {
     win = true;
-    console.log("You Win!  Press any key to end the game.")
+    console.log("----------------------------")
+    console.log("----------You Win!----------")
+    console.log("-----Thanks for Playing-----")
+    console.log("----------------------------")
 
 }
 
@@ -97,7 +105,11 @@ function winGame() {
 
 function loseGame() {
     play = false;
-    console.log("LOSER!  Press any key to end the game.")
+    console.log("----------------------------")
+    console.log("-----------LOSER!-----------")
+    console.log("-----Thanks for Playing-----")
+    console.log("----------------------------")
 }
 
-askQue();
+displayWord();
+// askQue();
