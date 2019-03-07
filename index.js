@@ -42,13 +42,8 @@ function askQue() {
 
 
         if (win === false && play === true) {
-            // askQue();
             displayWord();
-        } else {
-            console.log("----------------------------")
-            console.log("-----Thanks for Playing-----")
-            console.log("----------------------------")
-        }
+        } 
     });
 };
 
@@ -69,7 +64,6 @@ function displayWord() {
     console.log("----------------------------------")
     console.log("")
     getCount(count, cleanStr);
-    // return cleanStr;
 }
 
 
@@ -77,7 +71,6 @@ function displayWord() {
 function getCount(count, cleanStr){
     // console.log("getCount: " + count);
     // console.log("cleanStr: " + cleanStr);
-    // if (count < 8) {
         if (cleanStr.includes("_ ") && count > 0) {
             // console.log("cleanStr: Yes _  Play");
             askQue();
@@ -87,17 +80,17 @@ function getCount(count, cleanStr){
         } else {
             winGame();
         }
-    // }
 };
 
 
 
 function winGame() {
     win = true;
-    console.log("----------------------------")
-    console.log("----------You Win!----------")
-    console.log("-----Thanks for Playing-----")
-    console.log("----------------------------")
+    console.log("----------------------------");
+    console.log("----------You Win!----------");
+    console.log("-----Thanks for Playing-----");
+    console.log("----------------------------");
+    console.log(" ");
 
 }
 
@@ -105,11 +98,11 @@ function winGame() {
 
 function loseGame() {
     play = false;
-    console.log("----------------------------")
-    console.log("-----------LOSER!-----------")
-    console.log("-----Thanks for Playing-----")
-    console.log("----------------------------")
+    console.log("----------------------------");
+    console.log("-----------LOSER!-----------");
+    console.log("-----Thanks for Playing-----");
+    console.log("----------------------------");
+    console.log(" ");
 }
 
 displayWord();
-// askQue();
